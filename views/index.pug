@@ -1,0 +1,30 @@
+head
+    title File Metadata Microservice
+
+    link(rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700")
+    link(rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons")
+
+    link(rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css")
+
+div(class="jumbotron text-white bg-danger")
+    div(class="container")
+        h1 File Metadata Microservice
+
+div(class="container")
+    div(class="card")
+        div(class="card-block")
+            h2(class="card-title") User stories:
+            hr
+
+            p(class="lead") #[strong(class="font-weight-bold") User Story 1:] I can submit a FormData object that includes a file upload.
+                |
+            p(class="lead") #[strong(class="font-weight-bold") User Story 2:] I When I submit something, I will receive the file size in bytes within the JSON response
+            hr
+
+        div(class="card-block")
+            form(action="/api/file-sizes", enctype="multipart/form-data", method="POST")
+                div(class="form-group")
+                    label(class="lead" for="choose-file") Add File
+                    input(type="file", class="form-control", name="chosenFile", id="choose-file" aria-describedby="fileHelp" placeholder="Enter file" required)
+                    small(id="fileHelp" class="form-text text-muted") We'll never share your files with anyone else.
+                button(type="submit" class="btn btn-primary btn-lg btn-block") Submit
